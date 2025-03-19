@@ -3,7 +3,11 @@ import SearchPage from "@/components/searchPage/SearchPage";
 import { Suspense } from "react";
 
 function SearchResultPage() {
-  return <Suspense fallback={<LoadingPage />}>{/* <SearchPage /> */}</Suspense>;
+  return (
+    <Suspense fallback={<LoadingPage />}>
+      <SearchPage />
+    </Suspense>
+  );
 }
 
 export default SearchResultPage;
