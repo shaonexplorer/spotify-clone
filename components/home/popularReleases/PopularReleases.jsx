@@ -1,8 +1,7 @@
 import SongCard from "@/components/songCard/SongCard";
 import { fetchSongs } from "@/lib/actions/songs";
 import { useEffect, useState } from "react";
-import Loader from "../Loader";
-import Image from "next/image";
+
 import LoaderSong from "@/components/loader/LoaderSong";
 
 function PopularReleases() {

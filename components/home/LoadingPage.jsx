@@ -10,7 +10,7 @@ function LoadingPage() {
         alt="spinner"
         className="animate-spin"
       /> */}
-      <p>Loading ...</p>
+      <p className="text-white">Loading ...</p>
     </div>
   );
 }
