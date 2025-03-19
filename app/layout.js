@@ -3,6 +3,8 @@ import "./globals.css";
 import RightSideBar from "@/components/sidebar/RightSideBar";
 import StoreProvider from "./StoreProvider";
 import MusicPlayer from "@/components/musicPlayer/MusicPlayer";
+import { Suspense } from "react";
+import LoadingPage from "@/components/home/LoadingPage";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,15 +15,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <StoreProvider>
-        <body className={`font-manRope antialiase bg-black`}>
-          <main className="sm:w-[1440px] 2xl:w-full mx-auto flex">
-            <LeftSideBar />
-            <section className="2xl:flex 2xl:flex-1"> {children}</section>
+        <Suspense fallback={<LoadingPage />}>
+          <body className={`font-manRope antialiase bg-black`}>
+            <main className="sm:w-[1440px] 2xl:w-full mx-auto flex">
+              <LeftSideBar />
+              <section className="2xl:flex 2xl:flex-1"> {children}</section>
 
-            <RightSideBar />
-            <MusicPlayer />
-          </main>
-        </body>
+              <RightSideBar />
+              <MusicPlayer />
+            </main>
+          </body>
+        </Suspense>
       </StoreProvider>
     </html>
   );
