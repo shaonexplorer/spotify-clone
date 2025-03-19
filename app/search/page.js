@@ -1,10 +1,11 @@
 "use client";
 
+import LoadingPage from "@/components/home/LoadingPage";
 import TopNavigation from "@/components/home/TopNavigation";
 import LoaderPopularSong from "@/components/loader/LoaderPopularSong";
 
 import SongCardPopular from "@/components/songCard/SongCardPopular";
-import { fetchSongs, getSongsBySearch } from "@/lib/actions/songs";
+import { getSongsBySearch } from "@/lib/actions/songs";
 
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
@@ -35,7 +36,7 @@ function SearchPage() {
   }, [searchParams]);
 
   return (
-    <Suspense>
+    <Suspense fallback={<LoadingPage />}>
       <main className="sm:w-[872px] 2xl:w-full h-full mx-auto p-[32px] bg-[#121212] flex flex-col text-white">
         <section className="w-full h-full flex flex-col gap-[24px]  ">
           <TopNavigation currentPage={"search"} />
