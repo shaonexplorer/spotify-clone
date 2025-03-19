@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-function loading() {
+function LoadingPage() {
   return (
     <div className="text-white w-screen h-screen z-50 fixed inset-0 bg-transparent flex items-center justify-center">
       <Image
@@ -14,4 +14,4 @@ function loading() {
   );
 }
 
-export default loading;
+export default LoadingPage;
