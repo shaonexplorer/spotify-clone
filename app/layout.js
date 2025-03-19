@@ -1,15 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import LeftSideBar from "@/components/sidebar/LeftSideBar";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import RightSideBar from "@/components/sidebar/RightSideBar";
+import StoreProvider from "./StoreProvider";
+import MusicPlayer from "@/components/musicPlayer/MusicPlayer";
 
 export const metadata = {
   title: "Create Next App",
@@ -19,11 +12,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <StoreProvider>
+        <body className={`font-manRope antialiase bg-black`}>
+          <main className="sm:w-[1440px] 2xl:w-full mx-auto flex">
+            <LeftSideBar />
+            <section className="2xl:flex 2xl:flex-1"> {children}</section>
+
+            <RightSideBar />
+            <MusicPlayer />
+          </main>
+        </body>
+      </StoreProvider>
     </html>
   );
 }
