@@ -1,3 +1,5 @@
+"use client";
+
 import Account from "./Account";
 import Fans from "./Fans";
 import RecentlyPlayed from "./RecentlyPlayed";

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Notification from "./searchBar/Notification";
 import SearchBar from "./searchBar/SearchBar";

@@ -5,9 +5,7 @@ import { Suspense } from "react";
 function SearchResultPage() {
   return (
     <div className="flex w-full">
-      <Suspense fallback={<LoadingPage />}>
-        <SearchPage />
-      </Suspense>
+      <SearchPage />
     </div>
   );
 }

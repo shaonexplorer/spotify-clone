@@ -36,32 +36,30 @@ function SearchPage() {
   }, [searchParams]);
 
   return (
-    <Suspense fallback={<LoadingPage />}>
-      <main className="flex-1 h-full mx-auto p-[10px] bg-[#121212] flex flex-col text-white">
-        <section className="w-full h-full flex flex-col gap-[24px]  ">
-          <TopNavigation currentPage={"search"} />
-          <div className="w-full flex items-center justify-between">
-            <h1 className="font-bold text-[20px] text-white capitalize">
-              search results
-            </h1>
-            <p className="font-semibold text-[16px] text-[#1DB954] capitalize">
-              showing {songList?.length} results
-            </p>
-          </div>
+    <main className="flex-1 h-full mx-auto p-[10px] bg-[#121212] flex flex-col text-white">
+      <section className="w-full h-full flex flex-col gap-[24px]  ">
+        <TopNavigation currentPage={"search"} />
+        <div className="w-full flex items-center justify-between">
+          <h1 className="font-bold text-[20px] text-white capitalize">
+            search results
+          </h1>
+          <p className="font-semibold text-[16px] text-[#1DB954] capitalize">
+            showing {songList?.length} results
+          </p>
+        </div>
 
-          <div className="w-full flex flex-col flex-wrap gap-[10px]">
-            {isLoading
-              ? [1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, index) => (
-                  <LoaderPopularSong key={index} />
-                ))
-              : songList &&
-                songList.map((song, i) => (
-                  <SongCardPopular key={i} song={song} index={i} />
-                ))}
-          </div>
-        </section>
-      </main>
-    </Suspense>
+        <div className="w-full flex flex-col flex-wrap gap-[10px]">
+          {isLoading
+            ? [1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, index) => (
+                <LoaderPopularSong key={index} />
+              ))
+            : songList &&
+              songList.map((song, i) => (
+                <SongCardPopular key={i} song={song} index={i} />
+              ))}
+        </div>
+      </section>
+    </main>
   );
 }
 

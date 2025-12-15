@@ -1,3 +1,5 @@
+"use client";
+
 import LoaderPopularSong from "@/components/loader/LoaderPopularSong";
 import SongCardPopular from "@/components/songCard/SongCardPopular";
 import { getTopPlayList } from "@/lib/actions/songs";

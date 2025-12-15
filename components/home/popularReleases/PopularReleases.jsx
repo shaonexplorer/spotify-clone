@@ -1,3 +1,5 @@
+"use client";
+
 import SongCard from "@/components/songCard/SongCard";
 import { fetchSongs } from "@/lib/actions/songs";
 import { useEffect, useState } from "react";
