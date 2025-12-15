@@ -4,9 +4,9 @@ import RecentlyPlayed from "./RecentlyPlayed";
 
 function RightSideBar() {
   return (
-    <div className="w-[300px] min-h-screen bg-[#212121] text-white">
-      <div className="fixed h-screen text-white ">
-        <main className="w-full p-[32px] flex flex-col gap-[44px]">
+    <div className="hidden sm:flex min-w-[300px] sticky top-0    h-screen bg-[#212121]   text-white">
+      <div className="  text-white ">
+        <main className="w-full sm:p-[32px] flex flex-col gap-[44px]">
           <Account />
           <Fans />
           <RecentlyPlayed />

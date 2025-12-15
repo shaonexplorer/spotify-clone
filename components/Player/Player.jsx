@@ -6,7 +6,6 @@ import { IoPauseCircle } from "react-icons/io5";
 import { AiFillBackward } from "react-icons/ai";
 import { AiFillForward } from "react-icons/ai";
 import { IoVolumeMedium } from "react-icons/io5";
-import Image from "next/image";
 
 function Player({ activeSong }) {
   const [isPlaying, setIsplaying] = useState(false);

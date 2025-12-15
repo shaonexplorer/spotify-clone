@@ -4,9 +4,11 @@ import { Suspense } from "react";
 
 function SearchResultPage() {
   return (
-    <Suspense fallback={<LoadingPage />}>
-      <SearchPage />
-    </Suspense>
+    <div className="flex w-full">
+      <Suspense fallback={<LoadingPage />}>
+        <SearchPage />
+      </Suspense>
+    </div>
   );
 }
 

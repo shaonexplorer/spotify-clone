@@ -10,7 +10,7 @@ function LeftSideBar() {
   const params = new URLSearchParams(searchParmas);
   const router = useRouter();
   return (
-    <div className="w-[270px] min-h-screen bg-[#212121]">
+    <div className="hidden sm:flex sm:min-w-[270px] min-h-screen bg-[#212121]">
       <section className="fixed h-screen text-white flex flex-col gap-[40px]">
         <Link href={"/"}>
           <Image

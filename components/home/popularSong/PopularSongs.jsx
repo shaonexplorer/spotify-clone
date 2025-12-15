@@ -24,7 +24,7 @@ function PopularSongs() {
   }, []);
 
   return (
-    <div className="w-full h-full flex flex-col gap-[20px] mt-[25px] ">
+    <div className="w-full h-full flex flex-col gap-4 sm:gap-[20px] mt-[25px] ">
       <h1 className="font-bold text-[20px] text-white capitalize">
         popular songs
       </h1>

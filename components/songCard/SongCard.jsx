@@ -19,7 +19,7 @@ function SongCard({ song }) {
       onMouseLeave={() => setHover(false)}
       className={`${
         currentSong?.id == song.id ? " " : ""
-      } w-[118px] h-[173px]   flex flex-col gap-[16px] relative cursor-pointer   transition-all duration-500`}
+      } sm:w-[118px] h-[173px]   flex flex-col gap-[16px] relative cursor-pointer   transition-all duration-500`}
     >
       {(hover && currentSong.id !== song.id) ||
       (currentSong.id == song.id && !isPlaying) ? (

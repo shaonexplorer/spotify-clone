@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Banner() {
   return (
-    <div className=" sm:w-[808px] 2xl:w-full h-[295px] rounded-[16px] bg-[url(/banner/Background.png)] bg-cover py-[30px] px-[56px] mt-[40px] relative">
+    <div className=" container h-[295px] rounded-[16px] bg-[url(/banner/Background.png)] bg-cover py-[30px] sm:px-[56px] mt-[10px] relative">
       <div className="flex flex-col gap-[30px]">
         <div id="text" className="flex flex-col">
           <div className="flex items-center gap-[12px]">
@@ -26,30 +26,26 @@ function Banner() {
               height={24}
               alt="verified"
             />
-            <p className="text-white text-[16px] font-medium capitalize">
+            <p className="text-white text-[12px] sm:text-[16px] font-medium capitalize">
               8,72,54,136
             </p>
-            <p className="text-[#949494] text-[16px] font-medium capitalize">
+            <p className="text-[#949494] text-[12px] sm:text-[16px] font-medium capitalize">
               monthly listener
             </p>
           </div>
         </div>
         <div id="button" className="flex items-center gap-[12px]">
-          <button className="w-fit h-[46px] bg-[#1DB954] px-[24px] rounded-[44px] text-[16px] font-bold text-white cursor-pointer">
+          <button className="w-fit h-[34px] px-[10px] sm:h-[46px] bg-[#1DB954] h-[34px] px-[10px] sm:px-[24px] rounded-[44px] text-[12px] sm:text-[16px] font-bold text-white cursor-pointer">
             PLAY
           </button>
-          <button className="w-fit h-[46px] bg-transparent border border-white px-[24px] rounded-[44px] text-[16px] font-bold text-white cursor-pointer">
+          <button className="w-fit h-[34px] px-[10px] sm:h-[46px] bg-transparent border border-white h-[34px] px-[10px] sm:px-[24px] rounded-[44px] text-[12px] sm:text-[16px] font-bold text-white cursor-pointer">
             FOLLOW
           </button>
         </div>
       </div>
-      <Image
-        src={"/banner/Artist.png"}
-        width={350}
-        height={280}
-        alt="artist"
-        className="absolute right-[40px] bottom-0"
-      />
+      <div className="absolute right-0 sm:right-[40px] bottom-0 w-[230px] h-[180px] sm:w-[350px] sm:h-[280px]">
+        <Image src={"/banner/Artist.png"} fill alt="artist" className="" />
+      </div>
     </div>
   );
 }

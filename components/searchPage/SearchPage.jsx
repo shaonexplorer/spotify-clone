@@ -37,7 +37,7 @@ function SearchPage() {
 
   return (
     <Suspense fallback={<LoadingPage />}>
-      <main className="sm:w-[872px] 2xl:w-full h-full mx-auto p-[32px] bg-[#121212] flex flex-col text-white">
+      <main className="flex-1 h-full mx-auto p-[10px] bg-[#121212] flex flex-col text-white">
         <section className="w-full h-full flex flex-col gap-[24px]  ">
           <TopNavigation currentPage={"search"} />
           <div className="w-full flex items-center justify-between">

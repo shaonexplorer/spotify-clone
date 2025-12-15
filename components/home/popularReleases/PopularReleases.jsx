@@ -13,7 +13,6 @@ function PopularReleases() {
       try {
         setIsLoading(true);
         const data = await fetchSongs();
-
         setSongList(data.data);
         setIsLoading(false);
       } catch (error) {
@@ -26,7 +25,7 @@ function PopularReleases() {
   }, []);
 
   return (
-    <div className="w-full h-[250px] flex flex-col gap-[24px] mt-[32px]">
+    <div className="container w-full h-[250px] flex flex-col gap-[24px] mt-[32px]">
       <div className="w-full flex items-center justify-between">
         <h1 className="font-bold text-[20px] text-white capitalize">
           popular releases

@@ -18,10 +18,10 @@ function SongCardPopular({ song, index }) {
       onMouseLeave={() => setHover(false)}
       className={`${
         currentSong?.id == song?.id ? "bg-gradient-to-r" : ""
-      } z-20 w-full h-[70px] px-[20px] flex items-center cursor-pointer hover:bg-gradient-to-r from-0% to-100% from-neutral-800 to-neutral-900 transition-all duration-500`}
+      } z-20 w-full h-[70px] sm:px-[20px] flex items-center cursor-pointer hover:bg-gradient-to-r from-0% to-100% from-neutral-800 to-neutral-900 transition-all duration-500`}
     >
       <div className="w-full h-full flex items-center justify-between">
-        <div id="cover" className="flex items-center gap-[24px]">
+        <div id="cover" className="flex items-center gap-4 sm:gap-[24px]">
           <p className="w-[15px] text-[16px] font-bold text-white">
             {/* {index + 1} */}
             {(hover && currentSong.id !== song.id) ||
@@ -39,7 +39,7 @@ function SongCardPopular({ song, index }) {
               index + 1
             )}
           </p>
-          <div className="w-[268] flex items-center gap-[16px]">
+          <div className="sm:w-[268] flex items-center gap-[16px]">
             <Image
               src={song.album.cover_big}
               width={54}
@@ -47,14 +47,14 @@ function SongCardPopular({ song, index }) {
               alt="cover"
               className="rounded-[12px]"
             />
-            <p className="text-[16px] font-bold text-white truncate">
+            <p className="text-[16px] font-bold text-white truncate w-[140px] sm:w-full">
               {song.title_short}
             </p>
           </div>
         </div>
 
-        <div id="others" className="flex items-center gap-[56px]">
-          <div className="flex items-center gap-[12px]">
+        <div id="others" className="flex items-center gap-4 sm:gap-[56px]">
+          <div className="hidden sm:flex items-center gap-2 sm:gap-[12px]">
             <Image
               src={"/banner/listener.png"}
               width={24}
@@ -64,7 +64,7 @@ function SongCardPopular({ song, index }) {
             <p className="text-[16px] font-bold text-white">{song.rank}</p>
           </div>
 
-          <div className="w-[75px] flex items-center gap-[12px]">
+          <div className="w-[65px] sm:w-[75px] flex items-center gap-2 sm:gap-[12px]">
             <Image
               src={"/song_card/duration.png"}
               width={24}
@@ -81,6 +81,7 @@ function SongCardPopular({ song, index }) {
             width={24}
             height={24}
             alt="favourite"
+            className="hidden sm:flex"
           />
 
           <Image
@@ -88,6 +89,7 @@ function SongCardPopular({ song, index }) {
             width={24}
             height={24}
             alt="menu"
+            className=" "
           />
         </div>
       </div>

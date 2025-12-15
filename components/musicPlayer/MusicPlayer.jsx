@@ -48,7 +48,7 @@ function MusicPlayer() {
   if (currentSong.length == 0) return null;
 
   return (
-    <div className="fixed z-20 bottom-0 sm:w-[1440px] 2xl:w-full mx-auto  h-[85px] test px-[32px] flex items-center  ">
+    <div className="fixed z-50 bottom-0  max-w-screen container   sm:h-[85px] test px-[32px] flex items-center  ">
       <audio
         ref={ref}
         autoPlay
@@ -63,22 +63,26 @@ function MusicPlayer() {
         min={0}
         max={ref.current?.duration || 0}
         onChange={(e) => (ref.current.currentTime = e.target.value)}
-        className="inset-0 fixed sm:w-[1440px] 2xl:w-full h-[4px] rounded-[12px]"
+        className="inset-0 fixed     h-[4px] rounded-[12px]"
       ></input>
-      <div className="w-full h-[64px] flex items-center justify-between">
-        <div id="details" className="w-[325px] flex items-center gap-[16px]">
-          <Image
-            src={currentSong?.album?.cover_small || "/player/Image.png"}
-            width={54}
-            height={54}
-            alt="cover"
-            className="rounded-[12px]"
-          />
-          <div className={`flex flex-col max-w-[140px]`}>
-            <p className="text-[18px] font-semibold text-white capitalize truncate">
+      <div className="w-full mx-auto container sm:h-[64px] flex flex-col gap-[10px] py-4 sm:flex-row items-center   justify-between">
+        <div id="details" className="sm:w-[325px] flex items-center gap-[16px]">
+          <div className="relative  hidden sm:flex sm:w-[54px] sm:h-[54px] rounded-[12px] overflow-clip">
+            <Image
+              src={currentSong?.album?.cover_small || "/player/Image.png"}
+              fill
+              alt="cover"
+              className="rounded-[12px]"
+            />
+          </div>
+
+          <div
+            className={`flex flex-col sm:items-start items-center max-w-[140px]`}
+          >
+            <p className="text-[15px] sm:text-[18px] font-semibold text-white capitalize truncate">
               {currentSong.title_short || "shape of you"}
             </p>
-            <p className="text-[14px] text-[#D2D2D2] capitalize truncate">
+            <p className="text-[12px] sm:text-[14px] text-[#D2D2D2] capitalize truncate">
               {currentSong.artist?.name || "Ed Sheeran"}
             </p>
           </div>
@@ -87,7 +91,7 @@ function MusicPlayer() {
             width={24}
             height={24}
             alt="favorite"
-            className="ml-[30px] mr-[35px]"
+            className="ml-[30px] mr-[35px] hidden sm:flex"
           />
         </div>
         <div
@@ -149,7 +153,7 @@ function MusicPlayer() {
             className="cursor-pointer"
           />
         </div>
-        <div id="volume" className="flex items-center gap-[24px]">
+        <div id="volume" className="hidden sm:flex items-center gap-[24px]">
           <p className="w-[90px] text-[#949494] text-[18px]">
             {Math.floor(currentPlayTime / 60)}:
             {Math.floor(currentPlayTime % 60)} /
